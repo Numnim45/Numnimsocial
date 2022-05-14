@@ -40,7 +40,7 @@ class MyDialog {
               ? const SizedBox()
               : ShowTextButton(label: label2!, pressFunc: pressFunc2),
           ShowTextButton(
-              label: 'cancael',
+              label: pressFunc1 == null ? 'OK' : 'cancael' ,
               pressFunc: () {
                 Navigator.pop(context);
               }),

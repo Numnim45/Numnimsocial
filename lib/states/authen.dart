@@ -67,14 +67,14 @@ class Authen extends StatelessWidget {
     return ShowForm(
       obscue: true,
       label: 'Password',
-      iconData: Icons.lock_open_outlined,
+      iconData: Icons.lock_open_outlined, changeFunc: (String string ) {  },
     );
   }
 
   ShowForm newEmail() {
     return ShowForm(
       label: 'Email :',
-      iconData: Icons.contact_mail_outlined,
+      iconData: Icons.contact_mail_outlined, changeFunc: (String string ) {  },
     );
   }
 

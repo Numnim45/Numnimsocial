@@ -9,12 +9,14 @@ class ShowForm extends StatelessWidget {
   final IconData iconData;
   final bool? obscue;
   final Function(String) changeFunc;
+  final TextEditingController? controller;
   const ShowForm({
     Key? key,
     required this.label,
     required this.iconData,
     this.obscue,
     required this.changeFunc,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -23,9 +25,11 @@ class ShowForm extends StatelessWidget {
       margin: const EdgeInsets.only(top: 16),
       width: 250,
       height: 40,
-      child: TextFormField(onChanged: changeFunc,
+      child: TextFormField(controller: controller,
+        onChanged: changeFunc,
         obscureText: obscue ?? false,
-        decoration: InputDecoration(fillColor: Colors.white.withOpacity(0.5),
+        decoration: InputDecoration(
+          fillColor: Colors.white.withOpacity(0.5),
           filled: true,
           contentPadding: EdgeInsets.symmetric(vertical: 4),
           prefixIcon: Icon(
